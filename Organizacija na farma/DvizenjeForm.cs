@@ -12,6 +12,7 @@ namespace Organizacija_na_farma
 {
     public partial class DvizenjeForm : Form
     {
+        private List<string> test { get; set; }
         public DvizenjeForm()
         {
             InitializeComponent();
