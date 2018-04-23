@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC7D11DC-D2F7-445B-8EEC-9500408E8349}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Organizacija_na_farma</RootNamespace>
+    <AssemblyName>Organizacija na farma</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlForm.Designer.cs">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dvizenje.cs" />
+    <Compile Include="DvizenjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DvizenjeForm.Designer.cs">
+      <DependentUpon>DvizenjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Female.cs" />
+    <Compile Include="IndividualForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IndividualForm.Designer.cs">
+      <DependentUpon>IndividualForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Individual.cs" />
+    <Compile Include="Leglo.cs" />
+    <Compile Include="Male.cs" />
+    <Compile Include="NewIndividualForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewIndividualForm.Designer.cs">
+      <DependentUpon>NewIndividualForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OdbivanjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OdbivanjeForm.Designer.cs">
+      <DependentUpon>OdbivanjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OprasuvanjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OprasuvanjeForm.Designer.cs">
+      <DependentUpon>OprasuvanjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OsemenuvajeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OsemenuvajeForm.Designer.cs">
+      <DependentUpon>OsemenuvajeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reproduction.cs" />
+    <Compile Include="ReproductionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReproductionForm.Designer.cs">
+      <DependentUpon>ReproductionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatusDvizenje.cs" />
+    <EmbeddedResource Include="ControlForm.resx">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DvizenjeForm.resx">
+      <DependentUpon>DvizenjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IndividualForm.resx">
+      <DependentUpon>IndividualForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewIndividualForm.resx">
+      <DependentUpon>NewIndividualForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OdbivanjeForm.resx">
+      <DependentUpon>OdbivanjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OprasuvanjeForm.resx">
+      <DependentUpon>OprasuvanjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OsemenuvajeForm.resx">
+      <DependentUpon>OsemenuvajeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ReproductionForm.resx">
+      <DependentUpon>ReproductionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
