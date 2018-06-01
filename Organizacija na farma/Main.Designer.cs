@@ -39,7 +39,7 @@
             // 
             // buttonIndividual
             // 
-            this.buttonIndividual.Location = new System.Drawing.Point(13, 13);
+            this.buttonIndividual.Location = new System.Drawing.Point(84, 12);
             this.buttonIndividual.Name = "buttonIndividual";
             this.buttonIndividual.Size = new System.Drawing.Size(125, 49);
             this.buttonIndividual.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // buttonReproduction
             // 
-            this.buttonReproduction.Location = new System.Drawing.Point(164, 13);
+            this.buttonReproduction.Location = new System.Drawing.Point(235, 12);
             this.buttonReproduction.Name = "buttonReproduction";
             this.buttonReproduction.Size = new System.Drawing.Size(125, 49);
             this.buttonReproduction.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // buttonMovment
             // 
-            this.buttonMovment.Location = new System.Drawing.Point(320, 13);
+            this.buttonMovment.Location = new System.Drawing.Point(391, 12);
             this.buttonMovment.Name = "buttonMovment";
             this.buttonMovment.Size = new System.Drawing.Size(125, 49);
             this.buttonMovment.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(13, 155);
+            this.button4.Location = new System.Drawing.Point(84, 155);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(124, 54);
             this.button4.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(168, 155);
+            this.button5.Location = new System.Drawing.Point(84, 246);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(124, 54);
             this.button5.TabIndex = 4;
@@ -87,7 +87,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(323, 155);
+            this.button6.Location = new System.Drawing.Point(318, 155);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(124, 54);
             this.button6.TabIndex = 5;
@@ -96,18 +96,19 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(478, 155);
+            this.button7.Location = new System.Drawing.Point(318, 246);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(124, 54);
             this.button7.TabIndex = 6;
             this.button7.Text = "Периодичен";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 261);
+            this.ClientSize = new System.Drawing.Size(554, 362);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);

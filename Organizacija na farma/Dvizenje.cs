@@ -8,19 +8,19 @@ namespace Organizacija_na_farma
 {
     public class Dvizenje
     {
-        public enum location { bFaza, prasiliste, toviliste};
-        public enum reason { izlezOdFarma, kupeno, prenos, prinudnoZaklano, uginato, rodeno};
-        public DateTime datum { get; set; }
-        public int kolicina { get; set; }
-        public location lokacija { get; set; }
-        public reason pricina { get; set; }
+        public string Skladiste { get; set; }
+        public string VidDvizenje { get; set; }
+        public int Priem { get; set; }
+        public int Izdavanje { get; set; }
+        public DateTime Datum { get; set; }
 
-        public Dvizenje(DateTime datum, int kolicina, location lokacija, reason pricina)
+        public Dvizenje(string skladiste, string vidDvizenje, int priem, int izdavanje, DateTime datum)
         {
-            this.datum = datum;
-            this.kolicina = kolicina;
-            this.lokacija = lokacija;
-            this.pricina = pricina;
+            Skladiste = skladiste;
+            VidDvizenje = vidDvizenje;
+            Priem = priem;
+            Izdavanje = izdavanje;
+            Datum = datum;
         }
     }
 }

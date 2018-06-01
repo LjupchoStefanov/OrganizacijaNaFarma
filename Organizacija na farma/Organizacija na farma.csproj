@@ -32,7 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,92 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ControlForm.Designer.cs">
-      <DependentUpon>ControlForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DataAcess.cs" />
     <Compile Include="Dvizenje.cs" />
-    <Compile Include="DvizenjeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DvizenjeForm.Designer.cs">
-      <DependentUpon>DvizenjeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Female.cs" />
-    <Compile Include="IndividualForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IndividualForm.Designer.cs">
-      <DependentUpon>IndividualForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Individual.cs" />
-    <Compile Include="Leglo.cs" />
-    <Compile Include="Male.cs" />
-    <Compile Include="NewIndividualForm.cs">
+    <Compile Include="OS.cs" />
+    <Compile Include="OSForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewIndividualForm.Designer.cs">
-      <DependentUpon>NewIndividualForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OdbivanjeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OdbivanjeForm.Designer.cs">
-      <DependentUpon>OdbivanjeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OprasuvanjeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OprasuvanjeForm.Designer.cs">
-      <DependentUpon>OprasuvanjeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OsemenuvajeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OsemenuvajeForm.Designer.cs">
-      <DependentUpon>OsemenuvajeForm.cs</DependentUpon>
+    <Compile Include="OSForm.Designer.cs">
+      <DependentUpon>OSForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reproduction.cs" />
-    <Compile Include="ReproductionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReproductionForm.Designer.cs">
-      <DependentUpon>ReproductionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StatusDvizenje.cs" />
-    <EmbeddedResource Include="ControlForm.resx">
-      <DependentUpon>ControlForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DvizenjeForm.resx">
-      <DependentUpon>DvizenjeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IndividualForm.resx">
-      <DependentUpon>IndividualForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewIndividualForm.resx">
-      <DependentUpon>NewIndividualForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OdbivanjeForm.resx">
-      <DependentUpon>OdbivanjeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OprasuvanjeForm.resx">
-      <DependentUpon>OprasuvanjeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OsemenuvajeForm.resx">
-      <DependentUpon>OsemenuvajeForm.cs</DependentUpon>
+    <EmbeddedResource Include="OSForm.resx">
+      <DependentUpon>OSForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,9 +82,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReproductionForm.resx">
-      <DependentUpon>ReproductionForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
