@@ -51,6 +51,36 @@
   <ItemGroup>
     <Compile Include="DataAcess.cs" />
     <Compile Include="Dvizenje.cs" />
+    <Compile Include="DvizenjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DvizenjeForm.Designer.cs">
+      <DependentUpon>DvizenjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DvizenjeFormDodadi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DvizenjeFormDodadi.Designer.cs">
+      <DependentUpon>DvizenjeFormDodadi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DvizenjeFormIzbrisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DvizenjeFormIzbrisi.Designer.cs">
+      <DependentUpon>DvizenjeFormIzbrisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DvizenjeFormPromeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DvizenjeFormPromeni.Designer.cs">
+      <DependentUpon>DvizenjeFormPromeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSForm.Designer.cs">
+      <DependentUpon>OSForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,20 +88,77 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="OS.cs" />
-    <Compile Include="OSForm.cs">
+    <Compile Include="OSFormDodadi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OSForm.Designer.cs">
-      <DependentUpon>OSForm.cs</DependentUpon>
+    <Compile Include="OSFormDodadi.Designer.cs">
+      <DependentUpon>OSFormDodadi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSFormIzbrisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSFormIzbrisi.Designer.cs">
+      <DependentUpon>OSFormIzbrisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSFormPromeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSFormPromeni.Designer.cs">
+      <DependentUpon>OSFormPromeni.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reproduction.cs" />
+    <Compile Include="ReprodukcijaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReprodukcijaForm.Designer.cs">
+      <DependentUpon>ReprodukcijaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReprodukcijaFormDodadi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReprodukcijaFormDodadi.Designer.cs">
+      <DependentUpon>ReprodukcijaFormDodadi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReprodukcijaFormIzbrisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReprodukcijaFormIzbrisi.Designer.cs">
+      <DependentUpon>ReprodukcijaFormIzbrisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReprodukcijaFormPromeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReprodukcijaFormPromeni.Designer.cs">
+      <DependentUpon>ReprodukcijaFormPromeni.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DvizenjeForm.resx">
+      <DependentUpon>DvizenjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DvizenjeFormDodadi.resx">
+      <DependentUpon>DvizenjeFormDodadi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DvizenjeFormIzbrisi.resx">
+      <DependentUpon>DvizenjeFormIzbrisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DvizenjeFormPromeni.resx">
+      <DependentUpon>DvizenjeFormPromeni.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OSForm.resx">
       <DependentUpon>OSForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSFormDodadi.resx">
+      <DependentUpon>OSFormDodadi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSFormIzbrisi.resx">
+      <DependentUpon>OSFormIzbrisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSFormPromeni.resx">
+      <DependentUpon>OSFormPromeni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -82,6 +169,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReprodukcijaForm.resx">
+      <DependentUpon>ReprodukcijaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprodukcijaFormDodadi.resx">
+      <DependentUpon>ReprodukcijaFormDodadi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprodukcijaFormIzbrisi.resx">
+      <DependentUpon>ReprodukcijaFormIzbrisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprodukcijaFormPromeni.resx">
+      <DependentUpon>ReprodukcijaFormPromeni.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

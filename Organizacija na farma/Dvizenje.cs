@@ -12,14 +12,13 @@ namespace Organizacija_na_farma
         public string VidDvizenje { get; set; }
         public int Priem { get; set; }
         public int Izdavanje { get; set; }
-        public DateTime Datum { get; set; }
+        public string Datum { get; set; }
 
-        public Dvizenje(string skladiste, string vidDvizenje, int priem, int izdavanje, DateTime datum)
+        public Dvizenje(string skladiste, string vidDvizenje, int priem, string datum)
         {
             Skladiste = skladiste;
             VidDvizenje = vidDvizenje;
             Priem = priem;
-            Izdavanje = izdavanje;
             Datum = datum;
         }
     }

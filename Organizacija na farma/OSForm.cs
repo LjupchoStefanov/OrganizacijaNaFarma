@@ -18,41 +18,39 @@ namespace Organizacija_na_farma
             InitializeComponent();
         }
 
-        public String makeDate(String date)
+        private void buttonDodadi_Click(object sender, EventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(date.Substring(6, 4));
-            sb.Append(date.Substring(3, 2));
-            sb.Append(date.Substring(0,2));
-            
-            
-            return sb.ToString();
+            OSFormDodadi newForm = new OSFormDodadi();
+            if (newForm.ShowDialog() == DialogResult.Yes)
+            {
+                DataAcess DA = new DataAcess();
+                SqlCommand cmd1 = new SqlCommand("Insert Into tblOS(IDF,FMajka,Naziv2,Pol,VID,FF,MM,FFF,FMM,MMF,MMM,RagjanjeDatum,Aktivno) " +
+                    "Values(0,N'"+ newForm.OS.Sifra +"',N'" + newForm.OS.Naziv + "',N'" + newForm.OS.Gender + "',N'" + newForm.OS.Vid + "',N'" + newForm.OS.Majka + "',N'" + newForm.OS.Tatko + "'" +
+                    ",N'" + newForm.OS.BabaMajka + "',N'" + newForm.OS.DedoMajka + "',N'" + newForm.OS.BabaTatko + "',N'" + newForm.OS.DedoTatko + "',cast('" + newForm.OS.BirthDate + "' as datetime),'" + newForm.OS.Aktivno + "')", DA.getConnection());
+                DA.cmdCommand(cmd1);
+            }
         }
 
-
-
-        private void Save_Click(object sender, EventArgs e)
+        private void buttonIzbrisi_Click(object sender, EventArgs e)
         {
-            String naziv = TBNaziv.Text;
-            String Fmajka = textBoxFMajka.Text;
-            String pol = TBPol.Text;
-            String vid = TBVid.Text;
-            String majka = TBMajka.Text;
-            String tatko = TBTatko.Text;
-            String Mmajka = TBBabaMajka.Text;
-            String TMajka = TBDedoMajka.Text;
-            String MTatko = TBBabaTatko.Text;
-            String TTatko = TBDedoTatko.Text;
-            String datum = makeDate(MTBDatum.Text);
-            label1.Text = datum;
-            DataAcess DA = new DataAcess();
-            //"',cast('" + datum + "' as datetime)
-            SqlCommand cmd1 = new SqlCommand("Insert Into tblOS(IDF,FMajka,Naziv2,Pol,VID,FF,MM,FFF,FMM,MMF,MMM,RagjanjeDatum,Aktivno) " +
-                "Values(55,N'"+ Fmajka +"',N'" + naziv +"',N'" + pol + "',N'" + vid + "',N'" + majka + "',N'" + tatko +"'" +
-                ",N'" + Mmajka + "',N'" + TMajka + "',N'" + MTatko + "',N'" + TTatko + "',cast('" + datum + "' as datetime),'1')", DA.getConnection());
-            DA.cmdInesrt(cmd1);
-
-
+            OSFormIzbrisi newForm = new OSFormIzbrisi();
+            if (newForm.ShowDialog() == DialogResult.Yes)
+            {
+                DataAcess DA = new DataAcess();
+                SqlCommand cmd1 = new SqlCommand("Delete from tblOs Where FMajka = N'" + newForm.Code + "'", DA.getConnection());
+                DA.cmdCommand(cmd1);
+            }
         }
+        private void buttonPromeni_Click(object sender, EventArgs e)
+        {
+            OSFormPromeni newForm = new OSFormPromeni();
+            if (newForm.ShowDialog() == DialogResult.Yes)
+            {
+                DataAcess DA = new DataAcess();
+                SqlCommand cmd1 = new SqlCommand("UPDATE tblOS SET IzlezDatum = N'" + newForm.Datum + "', Aktivno = N'" + newForm.Aktivno + "' Where FMajka = N'" + newForm.Code + "'", DA.getConnection());
+                DA.cmdCommand(cmd1);
+            }
+        }
+
     }
 }

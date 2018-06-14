@@ -39,19 +39,19 @@
             // 
             // buttonIndividual
             // 
-            this.buttonIndividual.Location = new System.Drawing.Point(84, 12);
+            this.buttonIndividual.Location = new System.Drawing.Point(31, 40);
             this.buttonIndividual.Name = "buttonIndividual";
-            this.buttonIndividual.Size = new System.Drawing.Size(125, 49);
+            this.buttonIndividual.Size = new System.Drawing.Size(141, 56);
             this.buttonIndividual.TabIndex = 0;
-            this.buttonIndividual.Text = "Идивидуа";
+            this.buttonIndividual.Text = "Единка";
             this.buttonIndividual.UseVisualStyleBackColor = true;
             this.buttonIndividual.Click += new System.EventHandler(this.buttonIndividual_Click);
             // 
             // buttonReproduction
             // 
-            this.buttonReproduction.Location = new System.Drawing.Point(235, 12);
+            this.buttonReproduction.Location = new System.Drawing.Point(200, 40);
             this.buttonReproduction.Name = "buttonReproduction";
-            this.buttonReproduction.Size = new System.Drawing.Size(125, 49);
+            this.buttonReproduction.Size = new System.Drawing.Size(144, 56);
             this.buttonReproduction.TabIndex = 1;
             this.buttonReproduction.Text = "Репродукција";
             this.buttonReproduction.UseVisualStyleBackColor = true;
@@ -59,9 +59,9 @@
             // 
             // buttonMovment
             // 
-            this.buttonMovment.Location = new System.Drawing.Point(391, 12);
+            this.buttonMovment.Location = new System.Drawing.Point(374, 40);
             this.buttonMovment.Name = "buttonMovment";
-            this.buttonMovment.Size = new System.Drawing.Size(125, 49);
+            this.buttonMovment.Size = new System.Drawing.Size(141, 56);
             this.buttonMovment.TabIndex = 2;
             this.buttonMovment.Text = "Движење";
             this.buttonMovment.UseVisualStyleBackColor = true;
@@ -69,7 +69,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(84, 155);
+            this.button4.Location = new System.Drawing.Point(117, 145);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(124, 54);
             this.button4.TabIndex = 3;
@@ -78,16 +78,16 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(84, 246);
+            this.button5.Location = new System.Drawing.Point(117, 237);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(124, 54);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Извештај Товеници";
+            this.button5.Text = "Извештај товеници";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(318, 155);
+            this.button6.Location = new System.Drawing.Point(308, 145);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(124, 54);
             this.button6.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(318, 246);
+            this.button7.Location = new System.Drawing.Point(308, 237);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(124, 54);
             this.button7.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 362);
+            this.ClientSize = new System.Drawing.Size(555, 336);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -117,7 +117,7 @@
             this.Controls.Add(this.buttonReproduction);
             this.Controls.Add(this.buttonIndividual);
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "Организација на фарма";
             this.ResumeLayout(false);
 
         }
