@@ -48,5 +48,11 @@ namespace Organizacija_na_farma
             DA.cmdInesrt(cmd1);
             
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            IzvestajZadaci zadaci = new IzvestajZadaci();
+            zadaci.Show();
+        }
     }
 }

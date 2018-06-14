@@ -51,6 +51,12 @@
   <ItemGroup>
     <Compile Include="DataAcess.cs" />
     <Compile Include="Dvizenje.cs" />
+    <Compile Include="IzvestajZadaci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzvestajZadaci.Designer.cs">
+      <DependentUpon>IzvestajZadaci.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reproduction.cs" />
+    <EmbeddedResource Include="IzvestajZadaci.resx">
+      <DependentUpon>IzvestajZadaci.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

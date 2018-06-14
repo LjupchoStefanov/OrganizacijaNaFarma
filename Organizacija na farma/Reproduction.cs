@@ -8,26 +8,39 @@ namespace Organizacija_na_farma
 {
     public class Reproduction
     {
-        public int ID { get; set; }
-        public OS Zensko { get; set; }
-        public OS Masko { get; set; }
-        public Nullable<DateTime> Osemena { get; set; }
-        public Nullable<bool> Kontrola { get; set; }
-        public Nullable<DateTime> KontrolaDatum { get; set; }
-        public Nullable<DateTime> Oprasena { get; set; }
+        public string Zensko { get; set; }
+        public string Masko { get; set; }
+        public string Osemena { get; set; }
+        public string KontrolaDatum { get; set; }
+        public bool Kontrola { get; set; }
+        public string Oprasena { get; set; }
         public float Rodeni { get; set; }
         public float MrtvoRodeni { get; set; }
         public float Nevitalni { get; set; }
-        public Nullable<DateTime> Odbivanje { get; set; }
-        public float OdbienuPrasinja { get; set; }
+        public string Odbivanje { get; set; }
+        public float OdbieniPrasinja { get; set; }
 
-        public Reproduction(int iD, OS zensko, OS masko, DateTime? osemena)
+        public Reproduction(string zensko, string masko, string osemena,string kontrolaDatum, bool kontrola, string oprasena, float rodeni, float mrtvoRodeni, float nevitalni, string odbivanje, float odbienuPrasinja)
         {
-            ID = iD;
             Zensko = zensko;
             Masko = masko;
             Osemena = osemena;
-            Kontrola = null;
+            KontrolaDatum = kontrolaDatum;
+            Kontrola = kontrola;
+            Oprasena = oprasena;
+            Rodeni = rodeni;
+            MrtvoRodeni = mrtvoRodeni;
+            Nevitalni = nevitalni;
+            Odbivanje = odbivanje;
+            OdbieniPrasinja = odbienuPrasinja;
+        }
+
+        /*public Reproduction(string zensko, string masko, string osemena)
+        {
+            Zensko = zensko;
+            Masko = masko;
+            Osemena = osemena;
+            Kontrola = false;
             KontrolaDatum = null;
             Oprasena = null;
             Rodeni = 0;
@@ -35,6 +48,11 @@ namespace Organizacija_na_farma
             Nevitalni = 0;
             Odbivanje = null;
             OdbienuPrasinja = 0;
+        }*/
+
+        public override string ToString()
+        {
+            return Zensko + "\t" + Masko + "\t" + Osemena + "\t" + KontrolaDatum + "\t" + Kontrola + "\t" + Oprasena +  Odbivanje;
         }
     }
 }
