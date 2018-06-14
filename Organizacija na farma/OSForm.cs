@@ -33,6 +33,7 @@ namespace Organizacija_na_farma
 
         private void Save_Click(object sender, EventArgs e)
         {
+            // testiranje push na ljupcho branc
             String naziv = TBNaziv.Text;
             String Fmajka = textBoxFMajka.Text;
             String pol = TBPol.Text;
