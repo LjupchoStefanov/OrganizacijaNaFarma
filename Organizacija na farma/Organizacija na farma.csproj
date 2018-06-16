@@ -84,12 +84,6 @@
   <ItemGroup>
     <Compile Include="DataAcess.cs" />
     <Compile Include="Dvizenje.cs" />
-    <Compile Include="IzvestajOsnoven.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IzvestajOsnoven.Designer.cs">
-      <DependentUpon>IzvestajOsnoven.cs</DependentUpon>
-    </Compile>
     <Compile Include="IzvestajZadaci.cs">
       <SubType>Form</SubType>
     </Compile>
