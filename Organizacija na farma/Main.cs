@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.IO;
 namespace Organizacija_na_farma
 {
     public partial class Main : Form
@@ -54,5 +56,101 @@ namespace Organizacija_na_farma
             IzvestajZadaci zadaci = new IzvestajZadaci();
             zadaci.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Document pdfDoc = new Document();
+            SqlDataReader reader = null;
+            try
+            {
+                PdfWriter pdf = PdfWriter.GetInstance(pdfDoc, new FileStream("Simple.pdf", FileMode.Create));
+                pdfDoc.Open();
+                string myFont = @"C:\Windows\Fonts\arial.ttf";
+                iTextSharp.text.pdf.BaseFont bfR;
+                bfR = iTextSharp.text.pdf.BaseFont.CreateFont(myFont,
+                  iTextSharp.text.pdf.BaseFont.IDENTITY_H,
+                  iTextSharp.text.pdf.BaseFont.EMBEDDED);
+
+                iTextSharp.text.BaseColor clrBlack =
+                    new iTextSharp.text.BaseColor(0, 0, 0);
+                iTextSharp.text.Font fntHead =
+                    new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, clrBlack);
+                pdfDoc.Add(new Paragraph("ТЕСТ", fntHead));
+                PdfPTable table = new PdfPTable(5);
+                //PdfPCell cell = new PdfPCell(new Phrase("ОСНОВЕН ИЗВЕШТАЈ"));
+                PdfPCell cell = new PdfPCell(new Phrase("OSNOVEN IZVESTAJ"));
+                cell.Colspan = 5;
+                cell.HorizontalAlignment = 1;
+                table.AddCell(cell);
+                table.AddCell("Месеци");
+                table.AddCell("Родени");
+                table.AddCell("Мртво Родени");
+                table.AddCell("Невитални");
+                table.AddCell("Одбиени Прасиња");
+                
+
+                DataAcess da = new DataAcess();
+                SqlConnection conn = da.getConnection();
+                conn.Open();
+                for (int i = 2; i < 3; i++) {
+                    int k = i + 1;
+                    String str = String.Format("Select * FROM tblReprodukcija Where OdbivanjeDatum > DATEADD(MONTH, {0}, GetDate()) and OdbivanjeDatum < DATEADD(MONTH, {1}, GetDate())", -k, -i);
+                    SqlCommand cmd = new SqlCommand(str);
+                    //SqlCommand cmd = new SqlCommand("Select * FROM tblReprodukcija Where OdbivanjeDatum > DATEADD(MONTH, -'" + k + "' , GetDate()) and OdbivanjeDatum < DATEADD(MONTH, -'" + i +"', GetDate())");
+                    cmd.Connection = conn;
+                    reader = cmd.ExecuteReader();
+                    List<Reproduction> lista = new List<Reproduction>();
+                    while (reader.Read())
+                    {
+                        string Zensko = reader["FMajka"].ToString();
+                        string Masko = reader["MTatko"].ToString();
+                        string Osemena = reader["OsemenuvanjeDatum"].ToString();
+                        string KontrolaDatum = reader["KontrolaDatum"].ToString();
+                        bool Kontrola = Boolean.Parse(reader["Kontrola"].ToString());
+                        string Oprasena = reader["OprasuvanjeDatum"].ToString();
+                        float Rodeni = 0;
+                        if (reader["ZivoRodeniPrasinja"].ToString() != "") Rodeni = float.Parse(reader["ZivoRodeniPrasinja"].ToString());
+                        float MrtvoRodeni = 0;
+                        if (reader["MrtvoRodeniPrasinja"].ToString() != "") MrtvoRodeni = float.Parse(reader["MrtvoRodeniPrasinja"].ToString());
+                        float Nevitalni = 0;
+                        if (reader["NevitalniPrasinja"].ToString() != "") Nevitalni = float.Parse(reader["NevitalniPrasinja"].ToString());
+                        string Odbivanje = reader["OdbivanjeDatum"].ToString();
+                        float OdbieniPrasinja = 0;
+                        if (reader["OdbieniPrasinja"].ToString() != "") OdbieniPrasinja = float.Parse(reader["OdbieniPrasinja"].ToString());
+                        Reproduction pom = new Reproduction(Zensko, Masko, Osemena, KontrolaDatum, Kontrola, Oprasena, Rodeni, MrtvoRodeni, Nevitalni, Odbivanje, OdbieniPrasinja);
+                        lista.Add(pom);
+                    }
+                    int rodeni = 0;
+                    int Mrtvi = 0;
+                    int nevitalni = 0;
+                    int odbieni = 0;
+                    for(int m = 0; m < lista.Count; m++)
+                    {
+                        rodeni += (int)lista[i].Rodeni;
+                        Mrtvi += (int)lista[i].MrtvoRodeni;
+                        nevitalni += (int)lista[i].Nevitalni;
+                        odbieni += (int)lista[i].OdbieniPrasinja;
+                    }
+                    table.AddCell(i.ToString());
+                    table.AddCell(rodeni.ToString());
+                    table.AddCell(Mrtvi.ToString());
+                    table.AddCell(nevitalni.ToString());
+                    table.AddCell(odbieni.ToString());
+                }
+                pdfDoc.Add(table);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                
+                reader.Close();
+                pdfDoc.Close();
+            }
+        }
+              
     }
 }
