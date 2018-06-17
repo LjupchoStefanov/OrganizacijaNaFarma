@@ -31,8 +31,10 @@
             this.buttonIndividual = new System.Windows.Forms.Button();
             this.buttonReproduction = new System.Windows.Forms.Button();
             this.buttonMovment = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonOsnoven = new System.Windows.Forms.Button();
+            this.buttonTovenici = new System.Windows.Forms.Button();
+            this.buttonZadaci = new System.Windows.Forms.Button();
+            this.buttonPeriodicen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonIndividual
@@ -65,33 +67,52 @@
             this.buttonMovment.UseVisualStyleBackColor = true;
             this.buttonMovment.Click += new System.EventHandler(this.buttonMovment_Click);
             // 
-            // button4
+            // buttonOsnoven
             // 
-            this.button4.Location = new System.Drawing.Point(117, 145);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(124, 54);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Извештај основен";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonOsnoven.Location = new System.Drawing.Point(117, 145);
+            this.buttonOsnoven.Name = "buttonOsnoven";
+            this.buttonOsnoven.Size = new System.Drawing.Size(124, 54);
+            this.buttonOsnoven.TabIndex = 3;
+            this.buttonOsnoven.Text = "Извештај основен";
+            this.buttonOsnoven.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonTovenici
             // 
-            this.button6.Location = new System.Drawing.Point(308, 145);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(124, 54);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Задачи";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.buttonTovenici.Location = new System.Drawing.Point(117, 237);
+            this.buttonTovenici.Name = "buttonTovenici";
+            this.buttonTovenici.Size = new System.Drawing.Size(124, 54);
+            this.buttonTovenici.TabIndex = 4;
+            this.buttonTovenici.Text = "Извештај товеници";
+            this.buttonTovenici.UseVisualStyleBackColor = true;
+            // 
+            // buttonZadaci
+            // 
+            this.buttonZadaci.Location = new System.Drawing.Point(308, 145);
+            this.buttonZadaci.Name = "buttonZadaci";
+            this.buttonZadaci.Size = new System.Drawing.Size(124, 54);
+            this.buttonZadaci.TabIndex = 5;
+            this.buttonZadaci.Text = "Задачи";
+            this.buttonZadaci.UseVisualStyleBackColor = true;
+            // 
+            // buttonPeriodicen
+            // 
+            this.buttonPeriodicen.Location = new System.Drawing.Point(308, 237);
+            this.buttonPeriodicen.Name = "buttonPeriodicen";
+            this.buttonPeriodicen.Size = new System.Drawing.Size(124, 54);
+            this.buttonPeriodicen.TabIndex = 6;
+            this.buttonPeriodicen.Text = "Периодичен";
+            this.buttonPeriodicen.UseVisualStyleBackColor = true;
+            this.buttonPeriodicen.Click += new System.EventHandler(this.button7_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 336);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.buttonPeriodicen);
+            this.Controls.Add(this.buttonZadaci);
+            this.Controls.Add(this.buttonTovenici);
+            this.Controls.Add(this.buttonOsnoven);
             this.Controls.Add(this.buttonMovment);
             this.Controls.Add(this.buttonReproduction);
             this.Controls.Add(this.buttonIndividual);
@@ -106,8 +127,10 @@
         private System.Windows.Forms.Button buttonIndividual;
         private System.Windows.Forms.Button buttonReproduction;
         private System.Windows.Forms.Button buttonMovment;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonOsnoven;
+        private System.Windows.Forms.Button buttonTovenici;
+        private System.Windows.Forms.Button buttonZadaci;
+        private System.Windows.Forms.Button buttonPeriodicen;
     }
 }
 
