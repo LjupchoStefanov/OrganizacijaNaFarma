@@ -48,20 +48,21 @@ namespace Organizacija_na_farma
                     comboBox1.Text = "Да";
                         if(reader["OprasuvanjeDatum"].ToString().Length != 0)
                         {
-                                 textBox2.Text = reader["OprasuvanjeDatum"].ToString();
-                                 numericUpDown1.Value = decimal.Parse(reader["ZivoRodeniPrasinja"].ToString());
-                                 numericUpDown2.Value = decimal.Parse(reader["MrtvoRodeniPrasinja"].ToString());
-                                 numericUpDown3.Value = decimal.Parse(reader["NevitalniPrasinja"].ToString());
-                                /*if (reader["OdbivanjeDatum"].ToString().Length != 0)
-                                {
-                                    textBox3.Text = reader["OprasuvanjeDatum"].ToString();
-                                    numericUpDown4.Value = int.Parse(reader["OdbieniPrasinja"].ToString());
-                                }
-                                else
-                                {
-                                    mtbDatumOdbivanje.Enabled = true;
-                                    numericUpDown4.Enabled = true;
-                                }*/
+                        textBox2.Text = reader["OprasuvanjeDatum"].ToString();
+                        numericUpDown1.Value = decimal.Parse(reader["ZivoRodeniPrasinja"].ToString());
+                        numericUpDown2.Value = decimal.Parse(reader["MrtvoRodeniPrasinja"].ToString());
+                        string pom = reader["NevitalniPrasinja"].ToString();
+                        numericUpDown3.Value = decimal.Parse(reader["NevitalniPrasinja"].ToString());
+                            if (reader["OdbivanjeDatum"].ToString().Length != 0)
+                            {
+                                textBox3.Text = reader["OprasuvanjeDatum"].ToString();
+                                numericUpDown4.Value = int.Parse(reader["OdbieniPrasinja"].ToString());
+                            }
+                            else
+                            {
+                                mtbDatumOdbivanje.Enabled = true;
+                                numericUpDown4.Enabled = true;
+                            }
                            
                         }
                         else

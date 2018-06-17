@@ -94,7 +94,7 @@
             this.buttonZadaci.TabIndex = 5;
             this.buttonZadaci.Text = "Задачи";
             this.buttonZadaci.UseVisualStyleBackColor = true;
-            this.buttonZadaci.Click += new System.EventHandler(this.buttonZadaci_Click);
+            this.buttonZadaci.Click += new System.EventHandler(this.buttonZadaci_Click_1);
             // 
             // buttonPeriodicen
             // 
