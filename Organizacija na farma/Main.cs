@@ -169,5 +169,15 @@ namespace Organizacija_na_farma
             IzvestajZadaci izvestajZadaci = new IzvestajZadaci();
             izvestajZadaci.Show();
         }
+
+        private void buttonOsnoven_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonZadaci_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

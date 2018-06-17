@@ -75,6 +75,7 @@
             this.buttonOsnoven.TabIndex = 3;
             this.buttonOsnoven.Text = "Извештај основен";
             this.buttonOsnoven.UseVisualStyleBackColor = true;
+            this.buttonOsnoven.Click += new System.EventHandler(this.buttonOsnoven_Click);
             // 
             // buttonTovenici
             // 
@@ -93,6 +94,7 @@
             this.buttonZadaci.TabIndex = 5;
             this.buttonZadaci.Text = "Задачи";
             this.buttonZadaci.UseVisualStyleBackColor = true;
+            this.buttonZadaci.Click += new System.EventHandler(this.buttonZadaci_Click);
             // 
             // buttonPeriodicen
             // 
@@ -102,7 +104,6 @@
             this.buttonPeriodicen.TabIndex = 6;
             this.buttonPeriodicen.Text = "Периодичен";
             this.buttonPeriodicen.UseVisualStyleBackColor = true;
-            this.buttonPeriodicen.Click += new System.EventHandler(this.button7_Click);
             // 
             // Main
             // 

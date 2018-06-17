@@ -51,7 +51,7 @@ namespace Organizacija_na_farma
                                  textBox2.Text = reader["OprasuvanjeDatum"].ToString();
                                  numericUpDown1.Value = decimal.Parse(reader["ZivoRodeniPrasinja"].ToString());
                                  numericUpDown2.Value = decimal.Parse(reader["MrtvoRodeniPrasinja"].ToString());
-                                 numericUpDown3.Value = decimal.Parse(reader["NevitalniPrasnija"].ToString());
+                                 numericUpDown3.Value = decimal.Parse(reader["NevitalniPrasinja"].ToString());
                                 /*if (reader["OdbivanjeDatum"].ToString().Length != 0)
                                 {
                                     textBox3.Text = reader["OprasuvanjeDatum"].ToString();
