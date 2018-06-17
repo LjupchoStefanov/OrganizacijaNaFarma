@@ -63,7 +63,21 @@ namespace Organizacija_na_farma
             SqlDataReader reader = null;
             try
             {
-                PdfWriter pdf = PdfWriter.GetInstance(pdfDoc, new FileStream("Simple.pdf", FileMode.Create));
+                string FileName = null;
+                if (FileName == null)
+                {
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Osnoven izvestaj (*.pdf)|*.pdf";
+                    saveFileDialog.Title = "Save Osnoven izvestaj";
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        FileName = saveFileDialog.FileName;
+                    }
+                    else
+                    {
+                        return;                    }
+                }
+                PdfWriter pdf = PdfWriter.GetInstance(pdfDoc, new FileStream(FileName, FileMode.Create));
                 pdfDoc.Open();
                 string myFont = @"C:\Windows\Fonts\arial.ttf";
                 iTextSharp.text.pdf.BaseFont bfR;
@@ -75,24 +89,27 @@ namespace Organizacija_na_farma
                     new iTextSharp.text.BaseColor(0, 0, 0);
                 iTextSharp.text.Font fntHead =
                     new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, clrBlack);
-                pdfDoc.Add(new Paragraph("ТЕСТ", fntHead));
+                //pdfDoc.Add(new Paragraph("ТЕСТ", fntHead));
                 PdfPTable table = new PdfPTable(5);
                 //PdfPCell cell = new PdfPCell(new Phrase("ОСНОВЕН ИЗВЕШТАЈ"));
                 PdfPCell cell = new PdfPCell(new Phrase("OSNOVEN IZVESTAJ"));
                 cell.Colspan = 5;
                 cell.HorizontalAlignment = 1;
                 table.AddCell(cell);
-                table.AddCell("Месеци");
-                table.AddCell("Родени");
-                table.AddCell("Мртво Родени");
-                table.AddCell("Невитални");
-                table.AddCell("Одбиени Прасиња");
-                
+                table.AddCell("Meseci");
+                table.AddCell("Rodeni");
+                table.AddCell("Mrtvo Rodeni");
+                table.AddCell("Nevitalni");
+                table.AddCell("Odbieni prasinja");
+                long vkupnoRodeni = 0;
+                long vkupnoMrtvoRodeni = 0;
+                long vkupnoNevitalni = 0;
+                long vkupnoOdbieniPrasinja = 0;
 
                 DataAcess da = new DataAcess();
                 SqlConnection conn = da.getConnection();
                 conn.Open();
-                for (int i = 2; i < 3; i++) {
+                for (int i = 1; i < 13; i++) {
                     int k = i + 1;
                     String str = String.Format("Select * FROM tblReprodukcija Where OdbivanjeDatum > DATEADD(MONTH, {0}, GetDate()) and OdbivanjeDatum < DATEADD(MONTH, {1}, GetDate())", -k, -i);
                     SqlCommand cmd = new SqlCommand(str);
@@ -132,13 +149,23 @@ namespace Organizacija_na_farma
                         odbieni += (int)lista[i].OdbieniPrasinja;
                     }
                     table.AddCell(i.ToString());
+                    vkupnoRodeni += rodeni;
                     table.AddCell(rodeni.ToString());
+                    vkupnoMrtvoRodeni += Mrtvi;
                     table.AddCell(Mrtvi.ToString());
+                    vkupnoNevitalni += nevitalni;
                     table.AddCell(nevitalni.ToString());
+                    vkupnoOdbieniPrasinja += odbieni;
                     table.AddCell(odbieni.ToString());
+                    reader.Close();
                 }
+                table.AddCell("Vkupno");
+                table.AddCell(vkupnoRodeni.ToString());
+                table.AddCell(vkupnoMrtvoRodeni.ToString());
+                table.AddCell(vkupnoNevitalni.ToString());
+                table.AddCell(vkupnoOdbieniPrasinja.ToString());
                 pdfDoc.Add(table);
-                
+                MessageBox.Show("Креаиран е PDF");
             }
             catch (Exception ex)
             {
@@ -147,7 +174,7 @@ namespace Organizacija_na_farma
             finally
             {
                 
-                reader.Close();
+               
                 pdfDoc.Close();
             }
         }
