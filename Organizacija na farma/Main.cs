@@ -40,7 +40,7 @@ namespace Organizacija_na_farma
             dvizenje.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonOsnoven_Click(object sender, EventArgs e)
         {
             Document pdfDoc = new Document();
             SqlDataReader reader = null;
@@ -164,7 +164,7 @@ namespace Organizacija_na_farma
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonZadaci_Click_1(object sender, EventArgs e)
         {
             IzvestajZadaci izvestajZadaci = new IzvestajZadaci();
             izvestajZadaci.Show();
