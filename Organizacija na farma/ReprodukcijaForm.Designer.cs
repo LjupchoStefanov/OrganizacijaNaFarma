@@ -40,7 +40,8 @@
             // buttonPromeni
             // 
             this.buttonPromeni.Enabled = false;
-            this.buttonPromeni.Location = new System.Drawing.Point(583, 303);
+            this.buttonPromeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPromeni.Location = new System.Drawing.Point(939, 399);
             this.buttonPromeni.Name = "buttonPromeni";
             this.buttonPromeni.Size = new System.Drawing.Size(129, 62);
             this.buttonPromeni.TabIndex = 5;
@@ -50,7 +51,8 @@
             // 
             // buttonDodadi
             // 
-            this.buttonDodadi.Location = new System.Drawing.Point(583, 171);
+            this.buttonDodadi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodadi.Location = new System.Drawing.Point(938, 256);
             this.buttonDodadi.Name = "buttonDodadi";
             this.buttonDodadi.Size = new System.Drawing.Size(129, 62);
             this.buttonDodadi.TabIndex = 4;
@@ -60,7 +62,8 @@
             // 
             // buttonIzbrisi
             // 
-            this.buttonIzbrisi.Location = new System.Drawing.Point(583, 44);
+            this.buttonIzbrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIzbrisi.Location = new System.Drawing.Point(939, 119);
             this.buttonIzbrisi.Name = "buttonIzbrisi";
             this.buttonIzbrisi.Size = new System.Drawing.Size(129, 62);
             this.buttonIzbrisi.TabIndex = 3;
@@ -71,16 +74,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 409);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(43, 571);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(125, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Внеси шифра";
             // 
             // buttonLista
             // 
             this.buttonLista.Enabled = false;
-            this.buttonLista.Location = new System.Drawing.Point(243, 409);
+            this.buttonLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLista.Location = new System.Drawing.Point(246, 570);
             this.buttonLista.Name = "buttonLista";
             this.buttonLista.Size = new System.Drawing.Size(129, 62);
             this.buttonLista.TabIndex = 9;
@@ -90,7 +95,7 @@
             // 
             // tbSifra
             // 
-            this.tbSifra.Location = new System.Drawing.Point(48, 440);
+            this.tbSifra.Location = new System.Drawing.Point(47, 612);
             this.tbSifra.Name = "tbSifra";
             this.tbSifra.Size = new System.Drawing.Size(100, 20);
             this.tbSifra.TabIndex = 10;
@@ -99,17 +104,18 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 12);
+            this.listBox1.HorizontalScrollbar = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 66);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(546, 381);
+            this.listBox1.ScrollAlwaysVisible = true;
+            this.listBox1.Size = new System.Drawing.Size(898, 459);
             this.listBox1.TabIndex = 11;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // ReprodukcijaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 483);
+            this.ClientSize = new System.Drawing.Size(1093, 665);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.tbSifra);
             this.Controls.Add(this.buttonLista);

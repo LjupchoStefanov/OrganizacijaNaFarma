@@ -40,6 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
@@ -52,10 +53,11 @@
             this.tbCode.Name = "tbCode";
             this.tbCode.Size = new System.Drawing.Size(100, 20);
             this.tbCode.TabIndex = 1;
-            this.tbCode.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
+            this.tbCode.Validating += new System.ComponentModel.CancelEventHandler(this.tbCode_Validating);
             // 
             // buttonSave
             // 
+            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.Location = new System.Drawing.Point(25, 116);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(112, 23);
@@ -66,6 +68,7 @@
             // 
             // buttonCancel
             // 
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Location = new System.Drawing.Point(143, 116);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(112, 23);

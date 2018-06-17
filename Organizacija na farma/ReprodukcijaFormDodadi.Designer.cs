@@ -62,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 145);
+            this.label3.Location = new System.Drawing.Point(21, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 13);
             this.label3.TabIndex = 2;
@@ -86,9 +86,10 @@
             // 
             // buttonSave
             // 
+            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.Location = new System.Drawing.Point(24, 213);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(100, 23);
+            this.buttonSave.Size = new System.Drawing.Size(113, 23);
             this.buttonSave.TabIndex = 6;
             this.buttonSave.Text = "Зачувај";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -111,9 +112,10 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(151, 213);
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Location = new System.Drawing.Point(143, 213);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(100, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(113, 23);
             this.buttonCancel.TabIndex = 9;
             this.buttonCancel.Text = "Откажи";
             this.buttonCancel.UseVisualStyleBackColor = true;

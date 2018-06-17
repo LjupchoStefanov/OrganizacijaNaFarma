@@ -43,9 +43,10 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(157, 212);
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Location = new System.Drawing.Point(151, 212);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(100, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(113, 23);
             this.buttonCancel.TabIndex = 17;
             this.buttonCancel.Text = "Откажи";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -64,9 +65,10 @@
             // 
             // buttonSave
             // 
+            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.Location = new System.Drawing.Point(30, 212);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(100, 23);
+            this.buttonSave.Size = new System.Drawing.Size(113, 23);
             this.buttonSave.TabIndex = 15;
             this.buttonSave.Text = "Зачувај";
             this.buttonSave.UseVisualStyleBackColor = true;

@@ -23,27 +23,6 @@ namespace Organizacija_na_farma
             Osemenuvanje = null;
         }
 
-        public String makeDate(String date)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(date.Substring(6, 4));
-            sb.Append(date.Substring(3, 2));
-            sb.Append(date.Substring(0, 2));
-
-            return sb.ToString();
-        }
-
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Yes;
-        }
-
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.No;
-        }
-
         private void tbZensko_Validating(object sender, CancelEventArgs e)
         {
             if (tbZensko.Text.Trim().Length == 0)
@@ -76,7 +55,7 @@ namespace Organizacija_na_farma
 
         private void mtbDatumOsemenuvanje_Validating(object sender, CancelEventArgs e)
         {
-            if (mtbDatumOsemenuvanje.Text.Trim().Length == 0)
+            if (mtbDatumOsemenuvanje.Text.Trim().Length == 6)
             {
                 errorProvider1.SetError(mtbDatumOsemenuvanje, "Внеси датум на осеменување");
                 e.Cancel = true;
@@ -84,9 +63,19 @@ namespace Organizacija_na_farma
             else
             {
                 errorProvider1.SetError(mtbDatumOsemenuvanje, null);
-                Osemenuvanje = makeDate(mtbDatumOsemenuvanje.Text);
+                Osemenuvanje = MakeDate.makeDate(mtbDatumOsemenuvanje.Text);
                 e.Cancel = false;
             }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Yes;
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.No;
         }
     }
 }

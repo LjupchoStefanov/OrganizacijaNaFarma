@@ -32,9 +32,7 @@
             this.buttonReproduction = new System.Windows.Forms.Button();
             this.buttonMovment = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonIndividual
@@ -75,15 +73,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Извештај основен";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(117, 237);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(124, 54);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Извештај товеници";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button6
             // 
@@ -93,25 +83,14 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "Задачи";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(308, 237);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(124, 54);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Периодичен";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 336);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.buttonMovment);
             this.Controls.Add(this.buttonReproduction);
@@ -128,9 +107,7 @@
         private System.Windows.Forms.Button buttonReproduction;
         private System.Windows.Forms.Button buttonMovment;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
     }
 }
 

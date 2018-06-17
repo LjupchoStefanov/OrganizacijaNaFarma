@@ -18,8 +18,7 @@ namespace Organizacija_na_farma
             InitializeComponent();
             Code = null;
         }
-
-        private void textBox1_Validating(object sender, CancelEventArgs e)
+        private void tbCode_Validating(object sender, CancelEventArgs e)
         {
             if (tbCode.Text.Trim().Length == 0)
             {
@@ -29,13 +28,13 @@ namespace Organizacija_na_farma
             else
             {
                 errorProvider1.SetError(tbCode, null);
+                Code = tbCode.Text;
                 e.Cancel = false;
             }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            Code = tbCode.Text;
             DialogResult = DialogResult.Yes;
         }
 

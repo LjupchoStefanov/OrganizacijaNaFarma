@@ -35,6 +35,7 @@
             // 
             // buttonIzbrisi
             // 
+            this.buttonIzbrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIzbrisi.Location = new System.Drawing.Point(167, 58);
             this.buttonIzbrisi.Name = "buttonIzbrisi";
             this.buttonIzbrisi.Size = new System.Drawing.Size(129, 62);
@@ -45,6 +46,7 @@
             // 
             // buttonDodadi
             // 
+            this.buttonDodadi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDodadi.Location = new System.Drawing.Point(12, 58);
             this.buttonDodadi.Name = "buttonDodadi";
             this.buttonDodadi.Size = new System.Drawing.Size(129, 62);
@@ -55,6 +57,7 @@
             // 
             // buttonPromeni
             // 
+            this.buttonPromeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPromeni.Location = new System.Drawing.Point(326, 58);
             this.buttonPromeni.Name = "buttonPromeni";
             this.buttonPromeni.Size = new System.Drawing.Size(129, 62);

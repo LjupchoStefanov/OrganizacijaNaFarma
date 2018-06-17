@@ -21,26 +21,6 @@ namespace Organizacija_na_farma
             OS = new OS(null,null,null,null,null,null,null,null,null,null,null);
         }
 
-        public String makeDate(String date)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(date.Substring(6, 4));
-            sb.Append(date.Substring(3, 2));
-            sb.Append(date.Substring(0, 2));
-      
-            return sb.ToString();
-        }
-
-        private void Save_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Yes;
-        }
-
-        private void Cancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.No;
-        }
-
         private void TBNaziv_Validating(object sender, CancelEventArgs e)
         {
             if (TBNaziv.Text.Trim().Length == 0)
@@ -71,22 +51,7 @@ namespace Organizacija_na_farma
             }
         }
 
-        private void TBPol_Validating(object sender, CancelEventArgs e)
-        {
-            if (TBPol.Text.Trim().Length == 0)
-            {
-                errorProvider1.SetError(TBPol, "Внеси пол");
-                e.Cancel = true;
-            }
-            else
-            {
-                errorProvider1.SetError(TBPol, null);
-                OS.Gender = TBNaziv.Text;
-                e.Cancel = false;
-            }
-        }
-
-        private void TBVid_Validating(object sender, CancelEventArgs e)
+       private void TBVid_Validating(object sender, CancelEventArgs e)
         {
             if (TBVid.Text.Trim().Length == 0)
             {
@@ -201,10 +166,34 @@ namespace Organizacija_na_farma
             else
             {
                 errorProvider1.SetError(MTBDatum, null);
-                OS.BirthDate = makeDate(MTBDatum.Text); ;
+                OS.BirthDate = MakeDate.makeDate(MTBDatum.Text); ;
                 e.Cancel = false;
             }
         }
 
+        private void Save_Click(object sender, EventArgs e)
+        {
+            if(OS.isValid()) DialogResult = DialogResult.Yes;
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.No;
+        }
+
+        private void comboBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBox1.Text.Trim().Length == 0)
+            {
+                errorProvider1.SetError(comboBox1, "Внеси пол");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(comboBox1, null);
+                OS.Gender = comboBox1.Text;
+                e.Cancel = false;
+            }
+        }
     }
 }

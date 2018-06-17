@@ -41,7 +41,6 @@
             this.DedoTatko = new System.Windows.Forms.Label();
             this.DataRaganje = new System.Windows.Forms.Label();
             this.TBNaziv = new System.Windows.Forms.TextBox();
-            this.TBPol = new System.Windows.Forms.TextBox();
             this.TBVid = new System.Windows.Forms.TextBox();
             this.TBMajka = new System.Windows.Forms.TextBox();
             this.TBTatko = new System.Windows.Forms.TextBox();
@@ -55,12 +54,14 @@
             this.textBoxFMajka = new System.Windows.Forms.TextBox();
             this.Cancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Naziv
             // 
             this.Naziv.AutoSize = true;
+            this.Naziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Naziv.Location = new System.Drawing.Point(23, 51);
             this.Naziv.Name = "Naziv";
             this.Naziv.Size = new System.Drawing.Size(39, 13);
@@ -70,6 +71,7 @@
             // Pol
             // 
             this.Pol.AutoSize = true;
+            this.Pol.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pol.Location = new System.Drawing.Point(23, 131);
             this.Pol.Name = "Pol";
             this.Pol.Size = new System.Drawing.Size(27, 13);
@@ -79,6 +81,7 @@
             // Vid
             // 
             this.Vid.AutoSize = true;
+            this.Vid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Vid.Location = new System.Drawing.Point(23, 174);
             this.Vid.Name = "Vid";
             this.Vid.Size = new System.Drawing.Size(26, 13);
@@ -88,15 +91,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(249, 9);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(193, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 13);
+            this.label4.Size = new System.Drawing.Size(239, 20);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Внесување на нова индивидуа";
+            this.label4.Text = "Внесување на нова единка";
             // 
             // Majka
             // 
             this.Majka.AutoSize = true;
+            this.Majka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Majka.Location = new System.Drawing.Point(23, 217);
             this.Majka.Name = "Majka";
             this.Majka.Size = new System.Drawing.Size(36, 13);
@@ -106,6 +111,7 @@
             // Tatko
             // 
             this.Tatko.AutoSize = true;
+            this.Tatko.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tatko.Location = new System.Drawing.Point(23, 263);
             this.Tatko.Name = "Tatko";
             this.Tatko.Size = new System.Drawing.Size(37, 13);
@@ -115,42 +121,47 @@
             // BabaMajka
             // 
             this.BabaMajka.AutoSize = true;
-            this.BabaMajka.Location = new System.Drawing.Point(322, 52);
+            this.BabaMajka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BabaMajka.Location = new System.Drawing.Point(320, 52);
             this.BabaMajka.Name = "BabaMajka";
-            this.BabaMajka.Size = new System.Drawing.Size(83, 13);
+            this.BabaMajka.Size = new System.Drawing.Size(82, 13);
             this.BabaMajka.TabIndex = 6;
-            this.BabaMajka.Text = "Мајка на Мајка";
+            this.BabaMajka.Text = "Мајка на мајка";
             // 
             // DedoMajka
             // 
             this.DedoMajka.AutoSize = true;
-            this.DedoMajka.Location = new System.Drawing.Point(321, 90);
+            this.DedoMajka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DedoMajka.Location = new System.Drawing.Point(319, 90);
             this.DedoMajka.Name = "DedoMajka";
-            this.DedoMajka.Size = new System.Drawing.Size(84, 13);
+            this.DedoMajka.Size = new System.Drawing.Size(83, 13);
             this.DedoMajka.TabIndex = 7;
-            this.DedoMajka.Text = "Татко на Мајка";
+            this.DedoMajka.Text = "Татко на мајка";
             // 
             // BabaTatko
             // 
             this.BabaTatko.AutoSize = true;
-            this.BabaTatko.Location = new System.Drawing.Point(321, 133);
+            this.BabaTatko.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BabaTatko.Location = new System.Drawing.Point(320, 133);
             this.BabaTatko.Name = "BabaTatko";
-            this.BabaTatko.Size = new System.Drawing.Size(84, 13);
+            this.BabaTatko.Size = new System.Drawing.Size(82, 13);
             this.BabaTatko.TabIndex = 8;
-            this.BabaTatko.Text = "Мајка на Татко";
+            this.BabaTatko.Text = "Мајка на татко";
             // 
             // DedoTatko
             // 
             this.DedoTatko.AutoSize = true;
-            this.DedoTatko.Location = new System.Drawing.Point(322, 177);
+            this.DedoTatko.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DedoTatko.Location = new System.Drawing.Point(320, 177);
             this.DedoTatko.Name = "DedoTatko";
-            this.DedoTatko.Size = new System.Drawing.Size(85, 13);
+            this.DedoTatko.Size = new System.Drawing.Size(83, 13);
             this.DedoTatko.TabIndex = 9;
-            this.DedoTatko.Text = "Татко на Татко";
+            this.DedoTatko.Text = "Татко на татко";
             // 
             // DataRaganje
             // 
             this.DataRaganje.AutoSize = true;
+            this.DataRaganje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataRaganje.Location = new System.Drawing.Point(322, 220);
             this.DataRaganje.Name = "DataRaganje";
             this.DataRaganje.Size = new System.Drawing.Size(97, 13);
@@ -164,14 +175,6 @@
             this.TBNaziv.Size = new System.Drawing.Size(100, 20);
             this.TBNaziv.TabIndex = 11;
             this.TBNaziv.Validating += new System.ComponentModel.CancelEventHandler(this.TBNaziv_Validating);
-            // 
-            // TBPol
-            // 
-            this.TBPol.Location = new System.Drawing.Point(89, 130);
-            this.TBPol.Name = "TBPol";
-            this.TBPol.Size = new System.Drawing.Size(100, 20);
-            this.TBPol.TabIndex = 12;
-            this.TBPol.Validating += new System.ComponentModel.CancelEventHandler(this.TBPol_Validating);
             // 
             // TBVid
             // 
@@ -242,6 +245,7 @@
             // 
             // Save
             // 
+            this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Save.Location = new System.Drawing.Point(302, 277);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(110, 32);
@@ -253,6 +257,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
@@ -269,6 +274,7 @@
             // 
             // Cancel
             // 
+            this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancel.Location = new System.Drawing.Point(475, 277);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(110, 32);
@@ -281,11 +287,24 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "F",
+            "M"});
+            this.comboBox1.Location = new System.Drawing.Point(89, 131);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 21);
+            this.comboBox1.TabIndex = 26;
+            this.comboBox1.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox1_Validating);
+            // 
             // OSFormDodadi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 340);
+            this.ClientSize = new System.Drawing.Size(659, 323);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.textBoxFMajka);
             this.Controls.Add(this.label2);
@@ -298,7 +317,6 @@
             this.Controls.Add(this.TBTatko);
             this.Controls.Add(this.TBMajka);
             this.Controls.Add(this.TBVid);
-            this.Controls.Add(this.TBPol);
             this.Controls.Add(this.TBNaziv);
             this.Controls.Add(this.DataRaganje);
             this.Controls.Add(this.DedoTatko);
@@ -333,7 +351,6 @@
         private System.Windows.Forms.Label DedoTatko;
         private System.Windows.Forms.Label DataRaganje;
         private System.Windows.Forms.TextBox TBNaziv;
-        private System.Windows.Forms.TextBox TBPol;
         private System.Windows.Forms.TextBox TBVid;
         private System.Windows.Forms.TextBox TBMajka;
         private System.Windows.Forms.TextBox TBTatko;
@@ -347,5 +364,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

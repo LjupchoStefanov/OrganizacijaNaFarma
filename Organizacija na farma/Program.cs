@@ -16,7 +16,7 @@ namespace Organizacija_na_farma
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReprodukcijaFormPromeni());
+            Application.Run(new Main());
         }
     }
 }
