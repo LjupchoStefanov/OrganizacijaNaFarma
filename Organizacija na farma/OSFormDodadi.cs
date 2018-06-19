@@ -50,7 +50,7 @@ namespace Organizacija_na_farma
                 e.Cancel = false;
             }
         }
-
+        
        private void TBVid_Validating(object sender, CancelEventArgs e)
         {
             if (TBVid.Text.Trim().Length == 0)
@@ -65,7 +65,7 @@ namespace Organizacija_na_farma
                 e.Cancel = false;
             }
         }
-
+ 
         private void TBMajka_Validating(object sender, CancelEventArgs e)
         {
             if (TBMajka.Text.Trim().Length == 0)
@@ -158,7 +158,7 @@ namespace Organizacija_na_farma
 
         private void MTBDatum_Validating(object sender, CancelEventArgs e)
         {
-            if (MTBDatum.Text.Trim().Length == 0)
+            if (MTBDatum.Text.Trim().Length != 10)
             {
                 errorProvider1.SetError(MTBDatum, "Внеси датум");
                 e.Cancel = true;
@@ -173,7 +173,11 @@ namespace Organizacija_na_farma
 
         private void Save_Click(object sender, EventArgs e)
         {
-            if(OS.isValid()) DialogResult = DialogResult.Yes;
+            if (TBNaziv.Text.Trim().Length != 0 && textBoxFMajka.Text.Trim().Length != 0 && TBVid.Text.Trim().Length != 0 && TBMajka.Text.Trim().Length != 0 && TBTatko.Text.Trim().Length != 0 && TBBabaMajka.Text.Trim().Length != 0 && TBDedoMajka.Text.Trim().Length != 0 && TBBabaTatko.Text.Trim().Length != 0 && TBDedoTatko.Text.Trim().Length != 0 && MTBDatum.Text.Trim().Length == 10 && comboBox1.SelectedIndex != -1) DialogResult = DialogResult.Yes;
+            else
+            {
+                MessageBox.Show("Внеси ги сите податоци!");
+            }
         }
 
         private void Cancel_Click(object sender, EventArgs e)
@@ -183,7 +187,7 @@ namespace Organizacija_na_farma
 
         private void comboBox1_Validating(object sender, CancelEventArgs e)
         {
-            if (comboBox1.Text.Trim().Length == 0)
+            if (comboBox1.SelectedIndex == -1)
             {
                 errorProvider1.SetError(comboBox1, "Внеси пол");
                 e.Cancel = true;
@@ -191,7 +195,7 @@ namespace Organizacija_na_farma
             else
             {
                 errorProvider1.SetError(comboBox1, null);
-                OS.Gender = comboBox1.Text;
+                OS.Gender = comboBox1.SelectedItem.ToString();
                 e.Cancel = false;
             }
         }

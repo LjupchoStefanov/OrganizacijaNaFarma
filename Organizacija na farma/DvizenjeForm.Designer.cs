@@ -47,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cm1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -129,6 +129,7 @@
             this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown2.TabIndex = 21;
             this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.numericUpDown2.Validating += new System.ComponentModel.CancelEventHandler(this.numericUpDown2_Validating);
             // 
             // numericUpDown1
             // 
@@ -143,6 +144,7 @@
             this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown1.TabIndex = 20;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numericUpDown1.Validating += new System.ComponentModel.CancelEventHandler(this.numericUpDown1_Validating);
             // 
             // tbPrenos
             // 
@@ -183,6 +185,7 @@
             this.mbDatum2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mbDatum2.ValidatingType = typeof(System.DateTime);
             this.mbDatum2.TextChanged += new System.EventHandler(this.mbDatum2_TextChanged);
+            this.mbDatum2.Validating += new System.ComponentModel.CancelEventHandler(this.mbDatum2_Validating);
             // 
             // label4
             // 
@@ -222,6 +225,7 @@
             this.mbDatum1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mbDatum1.ValidatingType = typeof(System.DateTime);
             this.mbDatum1.TextChanged += new System.EventHandler(this.mbDatum1_TextChanged);
+            this.mbDatum1.Validating += new System.ComponentModel.CancelEventHandler(this.mbDatum1_Validating);
             // 
             // label3
             // 
@@ -265,6 +269,7 @@
             this.cm1.Size = new System.Drawing.Size(153, 24);
             this.cm1.TabIndex = 2;
             this.cm1.SelectedIndexChanged += new System.EventHandler(this.cm1_SelectedIndexChanged);
+            this.cm1.Validating += new System.ComponentModel.CancelEventHandler(this.cm1_Validating);
             // 
             // groupBox2
             // 
@@ -283,10 +288,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Тековна состојба";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 64);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 16);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Прасилиште";
+            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(127, 199);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(93, 22);
             this.textBox5.TabIndex = 20;
             // 
@@ -294,6 +309,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(127, 129);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(93, 22);
             this.textBox4.TabIndex = 19;
             // 
@@ -301,6 +317,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(127, 61);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(93, 22);
             this.textBox3.TabIndex = 16;
             // 
@@ -346,15 +363,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 64);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 16);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Прасилиште";
             // 
             // DvizenjeForm
             // 

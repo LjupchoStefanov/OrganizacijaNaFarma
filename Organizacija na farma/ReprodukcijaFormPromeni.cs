@@ -27,7 +27,6 @@ namespace Organizacija_na_farma
         public ReprodukcijaFormPromeni(String zensko)
         {
             InitializeComponent();
-            //select* from tblReprodukcija Where FMajka = '1182' order by OsemenuvanjeDatum desc
             DataAcess da = new DataAcess();
             SqlConnection conn = da.getConnection();
             conn.Open();
@@ -45,14 +44,21 @@ namespace Organizacija_na_farma
                 if(reader["KontrolaDatum"].ToString().Length != 0)
                 {
                     textBox1.Text = reader["KontrolaDatum"].ToString();
-                    comboBox1.Text = "Да";
+                    if (bool.Parse(reader["Kontrola"].ToString()) == true)
+                    {
+                        comboBox1.Text = "Да";
+                    }
+                    else
+                    {
+                        comboBox1.Text = "Не";
+                    }
                         if(reader["OprasuvanjeDatum"].ToString().Length != 0)
                         {
                         textBox2.Text = reader["OprasuvanjeDatum"].ToString();
                         numericUpDown1.Value = decimal.Parse(reader["ZivoRodeniPrasinja"].ToString());
                         numericUpDown2.Value = decimal.Parse(reader["MrtvoRodeniPrasinja"].ToString());
-                        string pom = reader["NevitalniPrasinja"].ToString();
                         numericUpDown3.Value = decimal.Parse(reader["NevitalniPrasinja"].ToString());
+
                             if (reader["OdbivanjeDatum"].ToString().Length != 0)
                             {
                                 textBox3.Text = reader["OprasuvanjeDatum"].ToString();
@@ -67,10 +73,13 @@ namespace Organizacija_na_farma
                         }
                         else
                         {
+                        if (comboBox1.SelectedItem.Equals("Да"))
+                        {
                             mtbDatumOprasuvanje.Enabled = true;
                             numericUpDown1.Enabled = true;
                             numericUpDown2.Enabled = true;
                             numericUpDown3.Enabled = true;
+                        }
                         }
                     }
                 else
@@ -84,45 +93,79 @@ namespace Organizacija_na_farma
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataAcess DA = new DataAcess();
-            if (mtbDatumKontrola.Enabled)
-            {
-                SqlCommand cmd1 = new SqlCommand("UPDATE tblReprodukcija SET KontrolaDatum = cast('" + MakeDate.makeDate(mtbDatumKontrola.Text) + "' as datetime)  Where FMajka = N'" + tbZensko.Text + "' and MTatko = N'" + tbMasko.Text + "'and OsemenuvanjeDatum = cast('" + tbDatumOsemenuvanje.Text + "' as datetime)", DA.getConnection());
-                DA.cmdCommand(cmd1);
-                if (comboBox1.SelectedIndex != -1)
+                DataAcess DA = new DataAcess();
+                if (mtbDatumKontrola.Enabled)
                 {
-                    cmd1 = new SqlCommand("UPDATE tblReprodukcija SET Kontrola = '1' Where FMajka = N'" + tbZensko.Text + "' and MTatko = N'" + tbMasko.Text + "'and OsemenuvanjeDatum = cast('" + tbDatumOsemenuvanje.Text + "' as datetime)", DA.getConnection());
+                    SqlCommand cmd1 = new SqlCommand("UPDATE tblReprodukcija SET KontrolaDatum = cast('" + MakeDate.makeDate(mtbDatumKontrola.Text) + "' as datetime)  Where FMajka = N'" + tbZensko.Text + "' and MTatko = N'" + tbMasko.Text + "'and OsemenuvanjeDatum = cast('" + tbDatumOsemenuvanje.Text + "' as datetime)", DA.getConnection());
                     DA.cmdCommand(cmd1);
+                    if (comboBox1.SelectedItem.Equals("Да"))
+                    {
+                        cmd1 = new SqlCommand("UPDATE tblReprodukcija SET Kontrola = '1' Where FMajka = N'" + tbZensko.Text + "' and MTatko = N'" + tbMasko.Text + "'and OsemenuvanjeDatum = cast('" + tbDatumOsemenuvanje.Text + "' as datetime)", DA.getConnection());
+                        DA.cmdCommand(cmd1);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Неуспешна контрола");
-                    mtbDatumKontrola.Enabled = false;
-                    comboBox1.Enabled = false;
-                    DialogResult = DialogResult.No;
-                }
-
-            }
-         
-            if (mtbDatumOprasuvanje.Enabled)
+                if (mtbDatumOprasuvanje.Enabled)
                 {
                     SqlCommand cmd1 = new SqlCommand("UPDATE tblReprodukcija SET OprasuvanjeDatum = cast('" + MakeDate.makeDate(mtbDatumOprasuvanje.Text) + "' as datetime) Where FMajka = N'" + tbZensko.Text + "' and MTatko = N'" + tbMasko.Text + "'and OsemenuvanjeDatum = cast('" + tbDatumOsemenuvanje.Text + "' as datetime)", DA.getConnection());
                     DA.cmdCommand(cmd1);
                     cmd1 = new SqlCommand("UPDATE tblReprodukcija SET ZivoRodeniPrasinja = '" + (int)numericUpDown1.Value + "',MrtvoRodeniPrasinja = N'" + (int)numericUpDown2.Value + "',NevitalniPrasinja = N'" + (int)numericUpDown3.Value + "' Where FMajka = N'" + tbZensko.Text + "' and MTatko = N'" + tbMasko.Text + "'and OsemenuvanjeDatum = cast('" + tbDatumOsemenuvanje.Text + "' as datetime)", DA.getConnection());
                     DA.cmdCommand(cmd1);
                 }
-            if (mtbDatumOdbivanje.Enabled)
+                if (mtbDatumOdbivanje.Enabled)
                 {
-                    SqlCommand cmd1 = new SqlCommand("UPDATE tblReprodukcija SET OdbivanjeDatum = cast('" + MakeDate.makeDate(mtbDatumOprasuvanje.Text) + "' as datetime) Where FMajka = N'" + tbZensko.Text + "' and MTatko = N'" + tbMasko.Text + "'and OsemenuvanjeDatum = cast('" + tbDatumOsemenuvanje.Text + "' as datetime)", DA.getConnection());
+                    SqlCommand cmd1 = new SqlCommand("UPDATE tblReprodukcija SET OdbivanjeDatum = cast('" + MakeDate.makeDate(mtbDatumOdbivanje.Text) + "' as datetime) Where FMajka = N'" + tbZensko.Text + "' and MTatko = N'" + tbMasko.Text + "'and OsemenuvanjeDatum = cast('" + tbDatumOsemenuvanje.Text + "' as datetime)", DA.getConnection());
                     DA.cmdCommand(cmd1);
                     cmd1 = new SqlCommand("UPDATE tblReprodukcija SET OdbieniPrasinja = '" + (int)numericUpDown4.Value + "',MrtvoRodeniPrasinja = N'" + (int)numericUpDown2.Value + "',NevitalniPrasinja = N'" + (int)numericUpDown3.Value + "' Where FMajka = N'" + tbZensko.Text + "' and MTatko = N'" + tbMasko.Text + "'and OsemenuvanjeDatum = cast('" + tbDatumOsemenuvanje.Text + "' as datetime)", DA.getConnection());
                     DA.cmdCommand(cmd1);
-            }
-               DialogResult = DialogResult.Yes; 
+                }
+                DialogResult = DialogResult.Yes;
         }
         private void button2_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.No;
+        }
+
+        private void mtbDatumOdbivanje_Validating(object sender, CancelEventArgs e)
+        {
+            if (mtbDatumOdbivanje.Text.Trim().Length != 10)
+            {
+                errorProvider1.SetError(mtbDatumOdbivanje, "Внеси датум на одбивање");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(mtbDatumOdbivanje, null);
+                e.Cancel = false;
+            }
+        }
+
+        private void mtbDatumOprasuvanje_Validating(object sender, CancelEventArgs e)
+        {
+            if (mtbDatumOprasuvanje.Text.Trim().Length != 10)
+            {
+                errorProvider1.SetError(mtbDatumOprasuvanje, "Внеси датум на опрасување");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(mtbDatumOprasuvanje, null);
+                e.Cancel = false;
+            }
+        }
+
+        private void mtbDatumKontrola_Validating(object sender, CancelEventArgs e)
+        {
+            if (mtbDatumKontrola.Text.Trim().Length != 10)
+            {
+                errorProvider1.SetError(mtbDatumKontrola, "Внеси датум на контрола");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(mtbDatumKontrola, null);
+                e.Cancel = false;
+            }
+
         }
     }
 }

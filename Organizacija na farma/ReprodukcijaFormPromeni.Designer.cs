@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,10 +56,12 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -183,6 +186,7 @@
             this.mtbDatumKontrola.TabIndex = 27;
             this.mtbDatumKontrola.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbDatumKontrola.ValidatingType = typeof(System.DateTime);
+            this.mtbDatumKontrola.Validating += new System.ComponentModel.CancelEventHandler(this.mtbDatumKontrola_Validating);
             // 
             // mtbDatumOprasuvanje
             // 
@@ -194,6 +198,7 @@
             this.mtbDatumOprasuvanje.TabIndex = 28;
             this.mtbDatumOprasuvanje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbDatumOprasuvanje.ValidatingType = typeof(System.DateTime);
+            this.mtbDatumOprasuvanje.Validating += new System.ComponentModel.CancelEventHandler(this.mtbDatumOprasuvanje_Validating);
             // 
             // mtbDatumOdbivanje
             // 
@@ -205,6 +210,7 @@
             this.mtbDatumOdbivanje.TabIndex = 29;
             this.mtbDatumOdbivanje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbDatumOdbivanje.ValidatingType = typeof(System.DateTime);
+            this.mtbDatumOdbivanje.Validating += new System.ComponentModel.CancelEventHandler(this.mtbDatumOdbivanje_Validating);
             // 
             // numericUpDown1
             // 
@@ -327,6 +333,10 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 41;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ReprodukcijaFormPromeni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,6 +375,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +410,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

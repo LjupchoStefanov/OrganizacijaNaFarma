@@ -40,7 +40,7 @@ namespace Organizacija_na_farma
 
         private void mtbDatum_Validating(object sender, CancelEventArgs e)
         {
-            if (mtbDatum.Text.Trim().Length == 0)
+            if (mtbDatum.Text.Trim().Length != 10)
             {
                 errorProvider1.SetError(mtbDatum, "Внеси датум");
                 e.Cancel = true;
@@ -56,7 +56,8 @@ namespace Organizacija_na_farma
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (tbCode.Text.Trim().Length == 0 && mtbDatum.Text.Trim().Length == 0) DialogResult = DialogResult.Yes;
+            if (tbCode.Text.Length != 0 && mtbDatum.Text.Length == 10) DialogResult = DialogResult.Yes;
+            else MessageBox.Show("Внеси ги сите податоци!");
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

@@ -15,7 +15,7 @@ namespace Organizacija_na_farma
 
         public SqlConnection getConnection()
         {
-            conn = new SqlConnection("Server=.\\FARMASQL;Database=Farma;Integrated Security=true");
+            conn = new SqlConnection("Data Source=DESKTOP-2QPPOB4;Initial Catalog=FARMA;Integrated Security=True");
             return conn;
         }
 

@@ -39,12 +39,6 @@ namespace Organizacija_na_farma
             Aktivno = true;
         }
 
-        public bool isValid()
-        {
-            if(IzlelDatum == null) return !String.IsNullOrWhiteSpace(Sifra) && !String.IsNullOrWhiteSpace(Naziv) && !String.IsNullOrWhiteSpace(Gender) && !String.IsNullOrWhiteSpace(Vid) && !String.IsNullOrWhiteSpace(Sifra) && !String.IsNullOrWhiteSpace(Majka) && !String.IsNullOrWhiteSpace(Tatko) && !String.IsNullOrWhiteSpace(BabaMajka) && !String.IsNullOrWhiteSpace(DedoMajka) && !String.IsNullOrWhiteSpace(BabaTatko) && !String.IsNullOrWhiteSpace(DedoTatko) && BirthDate.Length == 10;
-            else return !String.IsNullOrWhiteSpace(Sifra) && !String.IsNullOrWhiteSpace(Naziv) && !String.IsNullOrWhiteSpace(Gender) && !String.IsNullOrWhiteSpace(Vid) && !String.IsNullOrWhiteSpace(Sifra) && !String.IsNullOrWhiteSpace(Majka) && !String.IsNullOrWhiteSpace(Tatko) && !String.IsNullOrWhiteSpace(BabaMajka) && !String.IsNullOrWhiteSpace(DedoMajka) && !String.IsNullOrWhiteSpace(BabaTatko) && !String.IsNullOrWhiteSpace(DedoTatko) && BirthDate.Length == 10 && IzlelDatum.Length == 10;
-        }
-
         public override string ToString()
         {
             return string.Format("{0}\t{1}\t{2}\t{3}",Sifra,Naziv,Gender);

@@ -55,7 +55,7 @@ namespace Organizacija_na_farma
 
         private void mtbDatumOsemenuvanje_Validating(object sender, CancelEventArgs e)
         {
-            if (mtbDatumOsemenuvanje.Text.Trim().Length == 6)
+            if (mtbDatumOsemenuvanje.Text.Trim().Length != 10)
             {
                 errorProvider1.SetError(mtbDatumOsemenuvanje, "Внеси датум на осеменување");
                 e.Cancel = true;
@@ -70,7 +70,8 @@ namespace Organizacija_na_farma
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Yes;
+            if (tbZensko.Text.Length != 0 && tbMasko.Text.Length != 0 && mtbDatumOsemenuvanje.Text.Length == 10) DialogResult = DialogResult.Yes;
+            else MessageBox.Show("Внеси ги сите податоци!");
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
