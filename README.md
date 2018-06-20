@@ -164,7 +164,7 @@ public static string makeDate(String date)
  ``` 
  
  Со помош на на ***iTextSharp*** во PDF формат се креира основниот извештај чија содржина е објаснета претходно. 
-
+ 
  ```csharp
          Document pdfDoc = new Document();
             SqlDataReader reader = null;
