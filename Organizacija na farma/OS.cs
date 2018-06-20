@@ -8,24 +8,22 @@ namespace Organizacija_na_farma
 {
     public class OS
     {
-        public int ID { get; set; }
         public string Sifra { get; set; }
         public string Naziv { get; set; }
         public string Gender { set; get; }
-        public int Vid { get; set; }
+        public string Vid { get; set; }
         public string Majka { get; set; }
         public string Tatko { get; set; }
         public string BabaMajka { get; set; }
         public string DedoMajka { get; set; }
         public string BabaTatko { get; set; }
         public string DedoTatko { get; set; }
-        public Nullable<DateTime> BirthDate { get; set; }
-        public Nullable<DateTime> IzlelDatum { get; set; }
+        public string BirthDate { get; set; }
+        public string IzlelDatum { get; set; }
         public bool Aktivno { get; set; }
 
-        public OS(int iD, string sifra, string naziv, string gender, int vid, string majka, string tatko, string babaMajka, string dedoMajka, string babaTatko, string dedoTatko, DateTime birthDate)
+        public OS(string sifra, string naziv, string gender, string vid, string majka, string tatko, string babaMajka, string dedoMajka, string babaTatko, string dedoTatko, string birthDate)
         {
-            ID = iD;
             Sifra = sifra;
             Naziv = naziv;
             Gender = gender;

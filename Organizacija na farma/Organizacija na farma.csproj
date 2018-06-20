@@ -32,8 +32,41 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.licensekey, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.licensekey.3.0.1\lib\net40\itext.licensekey.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.licensekey, Version=1.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.licensekey.1.0.4\lib\itextsharp.licensekey.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.pdfa.5.5.13\lib\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xfaworker, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xfaworker.5.5.13\lib\net40\itextsharp.xfaworker.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xtra.5.5.13\lib\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="Jint, Version=0.9.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xfaworker.5.5.13\lib\net40\Jint.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -50,12 +83,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAcess.cs" />
-    <Compile Include="Dvizenje.cs" />
     <Compile Include="IzvestajZadaci.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="IzvestajZadaci.Designer.cs">
       <DependentUpon>IzvestajZadaci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MakeDate.cs" />
+    <Compile Include="Dvizenje.cs" />
+    <Compile Include="DvizenjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DvizenjeForm.Designer.cs">
+      <DependentUpon>DvizenjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSForm.Designer.cs">
+      <DependentUpon>OSForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -64,15 +110,54 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="OS.cs" />
-    <Compile Include="OSForm.cs">
+    <Compile Include="OSFormDodadi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OSForm.Designer.cs">
-      <DependentUpon>OSForm.cs</DependentUpon>
+    <Compile Include="OSFormDodadi.Designer.cs">
+      <DependentUpon>OSFormDodadi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSFormIzbrisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSFormIzbrisi.Designer.cs">
+      <DependentUpon>OSFormIzbrisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSFormPromeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSFormPromeni.Designer.cs">
+      <DependentUpon>OSFormPromeni.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reproduction.cs" />
+    <Compile Include="ReprodukcijaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReprodukcijaForm.Designer.cs">
+      <DependentUpon>ReprodukcijaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReprodukcijaFormDodadi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReprodukcijaFormDodadi.Designer.cs">
+      <DependentUpon>ReprodukcijaFormDodadi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReprodukcijaFormIzbrisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReprodukcijaFormIzbrisi.Designer.cs">
+      <DependentUpon>ReprodukcijaFormIzbrisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReprodukcijaFormPromeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReprodukcijaFormPromeni.Designer.cs">
+      <DependentUpon>ReprodukcijaFormPromeni.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DvizenjeForm.resx">
+      <DependentUpon>DvizenjeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IzvestajZadaci.resx">
       <DependentUpon>IzvestajZadaci.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,6 +166,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSForm.resx">
       <DependentUpon>OSForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSFormDodadi.resx">
+      <DependentUpon>OSFormDodadi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSFormIzbrisi.resx">
+      <DependentUpon>OSFormIzbrisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSFormPromeni.resx">
+      <DependentUpon>OSFormPromeni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +185,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReprodukcijaForm.resx">
+      <DependentUpon>ReprodukcijaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprodukcijaFormDodadi.resx">
+      <DependentUpon>ReprodukcijaFormDodadi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprodukcijaFormIzbrisi.resx">
+      <DependentUpon>ReprodukcijaFormIzbrisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprodukcijaFormPromeni.resx">
+      <DependentUpon>ReprodukcijaFormPromeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

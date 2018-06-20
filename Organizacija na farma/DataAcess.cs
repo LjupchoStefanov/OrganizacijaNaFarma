@@ -15,11 +15,12 @@ namespace Organizacija_na_farma
 
         public SqlConnection getConnection()
         {
-            conn= new SqlConnection("Server=.\\FARMASQL;Database=Farma;Integrated Security=true");
+            conn = new SqlConnection("Data Source=194.149.138.63;Initial Catalog=FarmaSQL;Persist Security Info=True;User ID=sa;Password=L0z1nk@z@baza!");
+            //conn = new SqlConnection("Server=.\\FARMASQL;Database=Farma;Integrated Security=true");
             return conn;
         }
 
-        public void cmdInesrt(SqlCommand cmd)
+        public void cmdCommand(SqlCommand cmd)
         {
             SqlDataReader reader;
             try
@@ -39,46 +40,5 @@ namespace Organizacija_na_farma
             }
         }
 
-        public void cmdUpdate(SqlCommand cmd)
-        {
-            SqlDataReader reader;
-            try
-            {
-                conn.Open();
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-
-                }
-                reader.Close();
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-        public void cmdSelect(SqlCommand cmd)
-        {
-            SqlDataReader reader;
-            try
-            {
-                conn.Open();
-                reader = cmd.ExecuteReader();
-                //listBox1.Items.Clear();
-                while (reader.Read())
-                {
-                    //if (reader.GetString(0) != null)
-                    // listBox1.Items.Add(string.Format("{0}", reader.GetString(0)));
-                }
-                //label1.Text = " Uspesno vtoro";
-                reader.Close();
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                // label1.Text = "Exeption cmd";
-            }
-        }
-    }
+   }
 }

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -25,7 +29,7 @@ namespace Organizacija_na_farma
             SqlDataReader reader = cmd.ExecuteReader();
             try
             {
-                
+
                 while (reader.Read())
                 {
                     aktivni.Add(reader["FMajka"].ToString());
@@ -42,7 +46,7 @@ namespace Organizacija_na_farma
             }
             for (int i = 0; i < aktivni.Count; i++)
             {
-                cmd = new SqlCommand("SELECT Top 1 * FROM [Farma].[dbo].[tblReprodukcija] Where FMajka = '" + aktivni[i] + "' order by OsemenuvanjeDatum desc");
+                cmd = new SqlCommand("SELECT Top 1 * From tblReprodukcija Where FMajka = '" + aktivni[i] + "' order by OsemenuvanjeDatum desc");
                 cmd.Connection = conn;
                 reader = cmd.ExecuteReader();
                 try
@@ -64,16 +68,20 @@ namespace Organizacija_na_farma
                         string Odbivanje = reader["OdbivanjeDatum"].ToString();
                         float OdbieniPrasinja = 0;
                         //if (reader["OdbieniPrasinja"].ToString() != "") OdbieniPrasinja = float.Parse(reader["OdbieniPrasinja"].ToString());
-                        Reproduction pom =  new Reproduction(Zensko, Masko, Osemena, KontrolaDatum, Kontrola, Oprasena, Rodeni, MrtvoRodeni, Nevitalni, Odbivanje, OdbieniPrasinja);
+                        Reproduction pom = new Reproduction(Zensko, Masko, Osemena, Kontrola, KontrolaDatum, Oprasena, Rodeni, MrtvoRodeni, Nevitalni, Odbivanje, OdbieniPrasinja);
                         if (zaOsemenuvanje(pom))
                         {
                             listBoxOsemenuvanje.Items.Add(pom.Zensko);
-                        }else if(zaOdbivanje(pom)){
+                        }
+                        else if (zaOdbivanje(pom))
+                        {
                             listBoxOdbivanje.Items.Add(pom.Zensko);
-                        }else if (zaOprasuvanje(pom))
+                        }
+                        else if (zaOprasuvanje(pom))
                         {
                             listBoxOprasuvanje.Items.Add(pom.Zensko);
-                        }else if (zaKontrola(pom))
+                        }
+                        else if (zaKontrola(pom))
                         {
                             listBoxKontrola.Items.Add(pom.Zensko);
                         }
