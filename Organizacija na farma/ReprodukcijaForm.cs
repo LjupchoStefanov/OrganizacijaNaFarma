@@ -26,7 +26,6 @@ namespace Organizacija_na_farma
             SqlCommand cmd = new SqlCommand("SELECT * from tblReprodukcija where FMajka = '" + tbSifra.Text + "' order by OsemenuvanjeDatum asc");
             cmd.Connection = conn;
             SqlDataReader reader = cmd.ExecuteReader();
-            listBox1.Items.Clear();
             while (reader.Read())
             {
                 string Zensko = reader["FMajka"].ToString();
@@ -44,7 +43,22 @@ namespace Organizacija_na_farma
                 string Odbivanje = reader["OdbivanjeDatum"].ToString();
                 float OdbieniPrasinja = 0;
                 if (reader["OdbieniPrasinja"].ToString() != "") OdbieniPrasinja = float.Parse(reader["OdbieniPrasinja"].ToString());
-                listBox1.Items.Add(new Reproduction(Zensko, Masko, Osemena, Kontrola, KontrolaDatum, Oprasena, Rodeni, MrtvoRodeni, Nevitalni, Odbivanje, OdbieniPrasinja).ToString());
+                int n = dataGridView1.Rows.Add();
+                
+                dataGridView1.Rows[n].Cells[0].Value = Zensko;
+                dataGridView1.Rows[n].Cells[1].Value = Masko;
+                dataGridView1.Rows[n].Cells[2].Value = Osemena;
+                dataGridView1.Rows[n].Cells[3].Value = KontrolaDatum;
+                dataGridView1.Rows[n].Cells[4].Value = Kontrola;
+                dataGridView1.Rows[n].Cells[5].Value = Oprasena;
+                dataGridView1.Rows[n].Cells[6].Value = Rodeni;
+                dataGridView1.Rows[n].Cells[7].Value = MrtvoRodeni;
+                dataGridView1.Rows[n].Cells[8].Value = Nevitalni;
+                dataGridView1.Rows[n].Cells[9].Value = Odbivanje;
+                dataGridView1.Rows[n].Cells[10].Value =OdbieniPrasinja;
+                
+
+                //listBox1.Items.Add(new Reproduction(Zensko, Masko, Osemena, Kontrola, KontrolaDatum, Oprasena, Rodeni, MrtvoRodeni, Nevitalni, Odbivanje, OdbieniPrasinja).ToString());
             }
             conn.Close();
         }
