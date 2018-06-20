@@ -46,7 +46,7 @@ namespace Organizacija_na_farma
             }
             for (int i = 0; i < aktivni.Count; i++)
             {
-                cmd = new SqlCommand("SELECT Top 1 * FROM [Farma].[dbo].[tblReprodukcija] Where FMajka = '" + aktivni[i] + "' order by OsemenuvanjeDatum desc");
+                cmd = new SqlCommand("SELECT Top 1 * From tblReprodukcija Where FMajka = '" + aktivni[i] + "' order by OsemenuvanjeDatum desc");
                 cmd.Connection = conn;
                 reader = cmd.ExecuteReader();
                 try

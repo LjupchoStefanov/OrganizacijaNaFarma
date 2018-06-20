@@ -15,7 +15,8 @@ namespace Organizacija_na_farma
 
         public SqlConnection getConnection()
         {
-            conn = new SqlConnection("Data Source=194.149.138.63;Initial Catalog=Farma;Persist Security Info=True;User ID=sa;Password=L0z1nk@z@baza!");
+            conn = new SqlConnection("Data Source=194.149.138.63;Initial Catalog=FarmaSQL;Persist Security Info=True;User ID=sa;Password=L0z1nk@z@baza!");
+            //conn = new SqlConnection("Server=.\\FARMASQL;Database=Farma;Integrated Security=true");
             return conn;
         }
 
