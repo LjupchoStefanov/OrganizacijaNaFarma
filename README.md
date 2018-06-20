@@ -99,7 +99,8 @@ public void cmdCommand(SqlCommand cmd)
 ```
 
 Класата ```public class MakeDate``` го содржи следниов метод:
-```
+
+```csharp
 public static string makeDate(String date)
         {
             StringBuilder sb = new StringBuilder();
@@ -117,7 +118,8 @@ public static string makeDate(String date)
 Во прилог се прикажани неколку примери кодови за задавање на командите кои се извршуваат во базата со податоци преку формите со помош на конекцијата од класата ```public class DataAcess```.
 
 * Пример 1 - Додавање нова репродукција во базата
-```
+
+```csharp
  private void buttonDodadi_Click(object sender, EventArgs e)
         {
             ReprodukcijaFormDodadi newForm = new ReprodukcijaFormDodadi();
@@ -135,7 +137,7 @@ public static string makeDate(String date)
 
 * Пример 2 - Бришење на единка од базата
 
-```
+```csharp
  private void buttonIzbrisi_Click(object sender, EventArgs e)
         {
             OSFormIzbrisi newForm = new OSFormIzbrisi();
@@ -149,7 +151,7 @@ public static string makeDate(String date)
 
 * Пример 3 - Промена на податоци за единка во базата
 
-```
+```csharp
  private void buttonPromeni_Click(object sender, EventArgs e)
         {
             OSFormPromeni newForm = new OSFormPromeni();
@@ -163,7 +165,8 @@ public static string makeDate(String date)
  
  Со помош на на ***iTextSharp*** во PDF формат се креира основниот извештај чија содржина е објаснета претходно. 
 
- ```  Document pdfDoc = new Document();
+ ```csharp
+         Document pdfDoc = new Document();
             SqlDataReader reader = null;
             try
             {
