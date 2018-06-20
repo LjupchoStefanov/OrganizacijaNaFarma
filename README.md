@@ -1,3 +1,4 @@
-# OrganizacijaNaFarma
-Windows Forms проект изработен од: Стефан Ристески и Љупчо Стефанов
+# **OrganizacijaNaFarma**
+
+Windows Forms проект изработен од: [Стефан Ристески 161515](https://github.com/Berkampe) и [Љупчо Стефанов 161522](https://github.com/LjupchoStefanov)
 ---
