@@ -37,7 +37,7 @@ namespace Organizacija_na_farma
 
         public override string ToString()
         {
-            return String.Format("{0}{1, 22}{2, 28}{3, 25}{4, 33}{5, 30}{6, 35}{7, 27}{8, 24}{9, 40}{10, 30}",Zensko, Masko, Osemena, KontrolaDatum, Kontrola, Oprasena, Rodeni, MrtvoRodeni, Nevitalni, Odbivanje, OdbieniPrasinja);
+            return String.Format("{0,-10}{1,-12:C} {2, 30} {3, 25} {4, -33}{5, 30}{6, 35}{7, 27}{8, 24}{9, 40}{10, 30}",Zensko, Masko, Osemena, KontrolaDatum, Kontrola, Oprasena, Rodeni, MrtvoRodeni, Nevitalni, Odbivanje, OdbieniPrasinja);
         }
     }
 }
