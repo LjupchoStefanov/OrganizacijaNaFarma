@@ -45,7 +45,7 @@ Windows Forms апликација изработена од: [Стефан Ри
 
 ![Додади](https://github.com/LjupchoStefanov/OrganizacijaNaFarma/blob/master/%D0%A1%D0%BB%D0%B8%D0%BA%D0%B8%20%D0%BE%D0%B4%20%D0%B0%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%98%D0%B0%D1%82%D0%B0/ReprodukcijaDodadi.png)
 
-Се внесува шифрата на женската единка, на машката единка и на датумот на осеменување и се брише единката од базата со податоци:
+Се внесува шифрата на женската единка, на машката единка и датумот на осеменување и се брише единката од базата со податоци:
 
 ![Бриши](https://github.com/LjupchoStefanov/OrganizacijaNaFarma/blob/master/%D0%A1%D0%BB%D0%B8%D0%BA%D0%B8%20%D0%BE%D0%B4%20%D0%B0%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%98%D0%B0%D1%82%D0%B0/ReprodukcijaIzbrisi.png)
 
