@@ -73,3 +73,91 @@ Windows Forms апликација изработена од: [Стефан Ри
 ![Движење](https://github.com/LjupchoStefanov/OrganizacijaNaFarma/blob/master/%D0%A1%D0%BB%D0%B8%D0%BA%D0%B8%20%D0%BE%D0%B4%20%D0%B0%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%98%D0%B0%D1%82%D0%B0/Zadaci.png)
 
 ---
+
+##3. **Краток опис на имплементација**
+
+Преку класата ```public class DataAcess``` се овозможува конекција на работната околина на програмскиот јазик C# и базата со податоци преку конекциски стринг од серверот на кој е прикачена. Оваа класа содржи метод за извршување на одредена команда (Sql) во базата со податоци.
+```
+public void cmdCommand(SqlCommand cmd)
+        {
+            SqlDataReader reader;
+            try
+            {
+                conn.Open();
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                }
+                reader.Close();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString()); 
+            }
+        }
+```
+
+Класата ```public class MakeDate``` го содржи следниов метод:
+```
+public static string makeDate(String date)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(date.Substring(6, 4));
+            sb.Append(date.Substring(3, 2));
+            sb.Append(date.Substring(0, 2));
+
+            return sb.ToString();
+        }
+```
+Датумот кој се внесува како стринг со формат "dd-mm-yyyy", со помош на вградениот метод substring се трансформира во стринг "yyyymmdd", формат потребен за понатамошно негово кастирање во базата со податоци во тип datetime.
+
+Класите ```public class ОS```, ```public class Reproduction``` и ```public class Dvizenje``` ги содржат соодветно податоците кои се додаваат, бришат или менуваат при кликнување на соодветните копчињата од прозорците Единка, Репродукција и Движење, кои претходно се објаснети.
+
+Во прилог се прикажани неколку примери кодови за задавање на командите кои се извршуваат во базата со податоци преку формите со помош на конекцијата од класата ```public class DataAcess```.
+
+* Пример 1 - Додавање нова репродукција во базата
+```
+ private void buttonDodadi_Click(object sender, EventArgs e)
+        {
+            ReprodukcijaFormDodadi newForm = new ReprodukcijaFormDodadi();
+            if (newForm.ShowDialog() == DialogResult.Yes)
+            {
+                DataAcess DA = new DataAcess();
+                SqlCommand cmd1 = new SqlCommand("Insert Into tblReprodukcija(ID,FMajka,MTatko,OsemenuvanjeDatum,Kontrola) " +
+                    "Values(0,N'" + newForm.Reprodukcija.Zensko + "',N'" + newForm.Reprodukcija.Masko + 
+                    "',cast('" + newForm.Reprodukcija.Osemena + "' as datetime),'" + newForm.Reprodukcija.Kontrola + "')", DA.getConnection());
+                DA.cmdCommand(cmd1);
+                Refresh();
+            }
+        }
+```
+
+* Пример 2 - Бришење на единка од базата
+
+```
+ private void buttonIzbrisi_Click(object sender, EventArgs e)
+        {
+            OSFormIzbrisi newForm = new OSFormIzbrisi();
+            if (newForm.ShowDialog() == DialogResult.Yes)
+            {
+                SqlCommand cmd1 = new SqlCommand("Delete from tblOs Where FMajka = N'" + newForm.Code + "'", DA.getConnection());
+                DA.cmdCommand(cmd1);
+            }
+        }
+ ``` 
+
+* Пример 3 - Промена на податоци за единка во базата
+
+```
+ private void buttonPromeni_Click(object sender, EventArgs e)
+        {
+            OSFormPromeni newForm = new OSFormPromeni();
+            if (newForm.ShowDialog() == DialogResult.Yes)
+            {
+                SqlCommand cmd1 = new SqlCommand("UPDATE tblOS SET IzlezDatum = N'" + newForm.Datum + "', Aktivno = N'" + newForm.Aktivno + "' Where FMajka = N'" + newForm.Code + "'", DA.getConnection());
+                DA.cmdCommand(cmd1);
+            }
+        }
+ ``` 
