@@ -20,6 +20,7 @@ namespace Organizacija_na_farma
 
         private void Refresh()
         {
+            dataGridView1.Rows.Clear();
             DataAcess da = new DataAcess();
             SqlConnection conn = da.getConnection();
             conn.Open();
